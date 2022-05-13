@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-import HeaderMenu from './components/Header/HeaderMenu';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Contacts from './pages/Contacts';
+import AppRouter from './routing';
 
-function App() {
+const App = (): JSX.Element => {
   return (
-    <div>
-    <HeaderMenu />
-    </div>
+    <>
+      <AppRouter />
+    </>
   );
 }
 
