@@ -1,13 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { RoutesPaths } from '../constants/navigation';
+import {
+    StyledWrap,
+} from './styled';
 
 const Contacts = () => {
-    return (
-        <NavLink to={RoutesPaths.CONTACTS}>
-            <div>Contacts</div>
-        </NavLink>
-    )
+    return <StyledWrap>Contacts</StyledWrap>
 }
 
 export default Contacts

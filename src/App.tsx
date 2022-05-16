@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import Contacts from './pages/Contacts';
 import AppRouter from './routing';
+import Header from './components/Header/Header';
 
 const App = (): JSX.Element => {
   return (
     <>
+      <Header />
       <AppRouter />
     </>
   );

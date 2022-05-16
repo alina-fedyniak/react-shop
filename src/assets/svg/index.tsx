@@ -1,5 +1,6 @@
-export { ReactComponent as InstagramIcon } from 'src/assets/svg/instagram.svg';
-export { ReactComponent as SearchIcon } from 'src/assets/svg/search.svg';
-export { ReactComponent as RectangleDownIcon } from 'src/assets/svg/rectangle-down.svg';
-export { ReactComponent as WhatsappIcon } from 'src/assets/svg/whatsapp.svg';
-export { ReactComponent as ShoppingBagIcon } from 'src/assets/svg/shopping_bag.svg';
+export { ReactComponent as InstagramIcon } from '../svg/instagram.svg';
+export { ReactComponent as SearchIcon } from '../svg/search.svg';
+export { ReactComponent as RectangleDownIcon } from '../svg/rectangle-down.svg';
+export { ReactComponent as WhatsappIcon } from '../svg/whatsapp.svg';
+export { ReactComponent as ShoppingBagIcon } from '../svg/shopping_bag.svg';
+export { ReactComponent as LogoIcon } from '../svg/logo.svg';

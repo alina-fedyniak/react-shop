@@ -1,13 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { RoutesPaths } from '../constants/navigation';
+import {
+    StyledWrap,
+} from './styled';
 
 const Home = () => {
-    return (
-            <NavLink to={RoutesPaths.HOME}>
-                <div>Home</div>
-            </NavLink>
-        )
+    return <StyledWrap>Home</StyledWrap>
 }
 
 export default Home
