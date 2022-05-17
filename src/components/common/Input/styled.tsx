@@ -12,7 +12,7 @@ export const StyledFormControl = styled('div')`
   position: relative;
 `;
 export const StyledInput = styled(Input)`
-  height:  48px;
+  height: 35px;
   background: ${COLORS.WHITE};
   border-radius: 6px;
   border: ${(props: TProps) => props.border || '1px solid #050E5F'};

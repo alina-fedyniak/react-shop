@@ -6,6 +6,7 @@ export const SvgWrap = styled.div`
   display: flex;
   svg {
     height: 57px;
+    margin: 10px 25px;
   }
   @media ${device.mobileL} { 
    padding-bottom: 20px;
