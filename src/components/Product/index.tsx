@@ -1,15 +1,16 @@
 import React from 'react';
 import {
     StyledWrap,
+    StyledImg,
 } from './styled'
 
-const Cart = (): JSX.Element => {
+const Product = (): JSX.Element => {
 
     return (
         <StyledWrap>
-
+            <StyledImg />
         </StyledWrap>
     )
 }
 
-export default Cart;
+export default Product;
