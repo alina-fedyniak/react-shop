@@ -3,5 +3,5 @@ import { ProductState } from '../redux/product/types';
 
 export type TGlobalState = {
     profileReducers: ProfileState,
-    cartReducers: ProductState,
+    productsReducers: ProductState,
 };

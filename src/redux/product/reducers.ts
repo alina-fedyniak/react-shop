@@ -1,10 +1,13 @@
 import createReducer from '../../utils/createReducer';
 import {
-    IProduct,
-    ProductActions, ProductState, GetProductDetailsSuccess,
+    IProducts,
+    ProductActions,
+    ProductState,
+    GetProductDetailsSuccess,
+    GetAllProductsSuccess,
 } from './types';
 
-const initialState: IProduct = {
+const initialState: IProducts = {
     id: 0,
     title: '',
     price: 0,
@@ -17,7 +20,7 @@ const initialState: IProduct = {
     }
 }
 
-const ProductReducers = createReducer({}, {
+const productReducers = createReducer({}, {
     GET_ONE_PRODUCT: (state: ProductState) => ({
         ...state,
         oneProductInfo: {
@@ -40,6 +43,25 @@ const ProductReducers = createReducer({}, {
             loader: false
         }
     }),
+    GET_PRODUCTS: (state: ProductState) => ({
+        ...state,
+        oneProductInfo: {
+            ...state.oneProductInfo,
+            loader: true
+        }
+    }),
+    GET_PRODUCTS_SUCCESS: (state: ProductState, action: GetAllProductsSuccess) => ({
+        ...state,
+        oneProductInfo: {
+            ...state.oneProductInfo,
+            loader: false,
+            info: action.payload
+        }
+    }),
+    GET_PRODUCTS_FAIL: (state: ProductState) => ({
+        ...state,
+        loader: false
+    }),
 });
 
-export default (state = initialState, action: ProductActions): any => (ProductReducers(state, action));
+export default (state = initialState, action: ProductActions): any => (productReducers(state, action));

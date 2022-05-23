@@ -1,6 +1,6 @@
 import { ProductsTypes } from './actions';
 
-export interface IProduct {
+export interface IProducts {
     id: number,
     title: string,
     price: number,
@@ -13,6 +13,14 @@ export interface IProduct {
     }
 }
 
+export interface IParamsRequest {
+    includes?: string | null,
+    sort?: string | null,
+    filter?: string | null,
+    limit?: string | null,
+    search?: string | null
+}
+
 export interface IOneProduct {
     loader: boolean,
     info: any
@@ -20,7 +28,7 @@ export interface IOneProduct {
 
 export interface ProductState {
     loader: boolean,
-    product: IProduct[],
+    product: IProducts[],
     oneProductInfo: IOneProduct,
 }
 
@@ -38,7 +46,24 @@ export interface GetProductDetailsFail {
     type: typeof ProductsTypes.GET_ONE_PRODUCT_FAIL
 }
 
+export interface GetAllProducts {
+    type: typeof ProductsTypes.GET_PRODUCTS,
+    //payload: any
+}
+
+export interface GetAllProductsSuccess {
+    type: typeof ProductsTypes.GET_PRODUCTS_SUCCESS,
+    payload: any
+}
+
+export interface GetAllProductsFail {
+    type: typeof ProductsTypes.GET_PRODUCTS_FAIL
+}
+
 export type ProductActions =
     | GetProductDetails
     | GetProductDetailsSuccess
     | GetProductDetailsFail
+    | GetAllProducts
+    | GetAllProductsSuccess
+    | GetAllProductsFail
