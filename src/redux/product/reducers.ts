@@ -2,66 +2,55 @@ import createReducer from '../../utils/createReducer';
 import {
     IProducts,
     ProductActions,
-    ProductState,
+    ProductsState,
     GetProductDetailsSuccess,
     GetAllProductsSuccess,
 } from './types';
 
-const initialState: IProducts = {
-    id: 0,
-    title: '',
-    price: 0,
-    description: '',
-    category: '',
-    image: '',
-    rating: {
-        rate: 0,
-        count: 0,
-    }
+const initialState: ProductsState = {
+    products: [],
+    oneProductInfo: {
+        info: [],
+    },
+    loader: false,
 }
 
-const productReducers = createReducer({}, {
-    GET_ONE_PRODUCT: (state: ProductState) => ({
+const productsReducers = createReducer({}, {
+    GET_ONE_PRODUCT: (state: ProductsState) => ({
         ...state,
         oneProductInfo: {
             ...state.oneProductInfo,
-            loader: true
-        }
+        },
+        loader: true
     }),
-    GET_ONE_PRODUCT_SUCCESS: (state: ProductState, action: GetProductDetailsSuccess) => ({
+    GET_ONE_PRODUCT_SUCCESS: (state: ProductsState, action: GetProductDetailsSuccess) => ({
         ...state,
         oneProductInfo: {
             ...state.oneProductInfo,
-            loader: false,
             info: action.payload
-        }
+        },
+        loader: false,
     }),
-    GET_ONE_PRODUCT_FAIL: (state: ProductState) => ({
+    GET_ONE_PRODUCT_FAIL: (state: ProductsState) => ({
         ...state,
         oneProductInfo: {
             ...state.oneProductInfo,
-            loader: false
-        }
+        },
+        loader: false
     }),
-    GET_PRODUCTS: (state: ProductState) => ({
+    GET_PRODUCTS: (state: ProductsState) => ({
         ...state,
-        oneProductInfo: {
-            ...state.oneProductInfo,
-            loader: true
-        }
+        loader: true,
     }),
-    GET_PRODUCTS_SUCCESS: (state: ProductState, action: GetAllProductsSuccess) => ({
+    GET_PRODUCTS_SUCCESS: (state: ProductsState, action: GetAllProductsSuccess) => ({
         ...state,
-        oneProductInfo: {
-            ...state.oneProductInfo,
-            loader: false,
-            info: action.payload
-        }
+        products: action.payload,
+        loader: false,
     }),
-    GET_PRODUCTS_FAIL: (state: ProductState) => ({
+    GET_PRODUCTS_FAIL: (state: ProductsState) => ({
         ...state,
         loader: false
     }),
 });
 
-export default (state = initialState, action: ProductActions): any => (productReducers(state, action));
+export default (state = initialState, action: ProductActions): any => (productsReducers(state, action));

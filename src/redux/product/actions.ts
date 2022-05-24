@@ -30,17 +30,16 @@ export const getOneProductFail = (): GetProductDetailsFail => ({
     type: ProductsTypes.GET_ONE_PRODUCT_FAIL
 })
 
-export const getAllProduct = (): GetAllProducts => ({
+export const getAllProducts = (): GetAllProducts => ({
     type: ProductsTypes.GET_PRODUCTS,
-    //payload
 })
 
-export const getAllProductSuccess = (payload: any): GetAllProductsSuccess => ({
+export const getAllProductsSuccess = (payload: any): GetAllProductsSuccess => ({
     type: ProductsTypes.GET_PRODUCTS_SUCCESS,
     payload
 })
 
-export const getAllProductFail = (): GetAllProductsFail => ({
+export const getAllProductsFail = (): GetAllProductsFail => ({
     type: ProductsTypes.GET_PRODUCTS_FAIL
 })
 

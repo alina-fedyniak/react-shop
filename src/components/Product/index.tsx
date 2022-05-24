@@ -4,16 +4,17 @@ import {
     StyledImg,
 } from './styled'
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { ProductsSelector } from '../../redux/product/selector';
-import { getAllProduct } from '../../redux/product/actions';
+//import { OneProductSelector } from '../../redux/product/selector';
+import { useParams } from 'react-router';
+import { getOneProduct } from '../../redux/product/actions';
 
 const Product = (): JSX.Element => {
+    const {id}: any = useParams();
     const dispatch = useAppDispatch();
-    const getProducts = useAppSelector(ProductsSelector);
-    console.log(getProducts)
+    //const { loader, info } = useAppSelector(OneProductSelector);
 
     useEffect(() => {
-        dispatch(getAllProduct());
+        dispatch(getOneProduct(id));
     }, []);
 
     return (

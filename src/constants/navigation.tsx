@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../pages/Home';
 import Contacts from '../pages/Contacts';
-import Products from '../pages/Products';
+import ProductsPage from '../pages/ProductsPage';
 
 export enum RoutesNames {
     HOME = 'HOME',
@@ -77,7 +77,7 @@ export const ROUTES: { [key in RoutesNames]: RouteConfig } = {
         RoutesNames.PRODUCTS,
         'Products',
         RoutesPaths[RoutesNames.PRODUCTS],
-        <Products/>,
+        <ProductsPage />,
     ),
 }
 

@@ -13,23 +13,14 @@ export interface IProducts {
     }
 }
 
-export interface IParamsRequest {
-    includes?: string | null,
-    sort?: string | null,
-    filter?: string | null,
-    limit?: string | null,
-    search?: string | null
-}
-
 export interface IOneProduct {
-    loader: boolean,
     info: any
 }
 
-export interface ProductState {
-    loader: boolean,
-    product: IProducts[],
+export interface ProductsState {
+    products: any,
     oneProductInfo: IOneProduct,
+    loader: boolean,
 }
 
 export interface GetProductDetails {
@@ -48,7 +39,6 @@ export interface GetProductDetailsFail {
 
 export interface GetAllProducts {
     type: typeof ProductsTypes.GET_PRODUCTS,
-    //payload: any
 }
 
 export interface GetAllProductsSuccess {

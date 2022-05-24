@@ -4,11 +4,11 @@ import {
     ProductsTypes,
     getOneProductFail,
     getOneProductSuccess,
-    getAllProductSuccess,
-    getAllProductFail
+    getAllProductsSuccess,
+    getAllProductsFail
 } from './actions';
 import { ProductsAPI } from '../../services/ProductsApi';
-import {GetAllProducts, GetProductDetails} from './types';
+import { GetProductDetails } from './types';
 import { message } from 'antd';
 
 function* getOneProductSaga(action: GetProductDetails): Generator {
@@ -25,10 +25,9 @@ function* getOneProductSaga(action: GetProductDetails): Generator {
 function* getAllProductsSaga(): Generator {
     try {
         const response: any = yield call(ProductsAPI.getAllProducts)
-        console.log(response)
-        yield put(getAllProductSuccess(response?.data))
+        yield put(getAllProductsSuccess(response?.data))
     } catch (e: any) {
-        yield put(getAllProductFail())
+        yield put(getAllProductsFail())
         message.error(e.data.message)
     }
 }
