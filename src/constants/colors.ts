@@ -24,6 +24,7 @@ export enum COLORS {
     DARK_BLUE = '#050E5F',
     DEEP_BLACK = '#333333',
     LIGHT_LAVENDER = '#EAE9FB',
+    LAVENDER = '#e6e6fa',
     DARK_GREY = '#828282',
     FAUX_JORDY_BLUE = '#87B8FF',
     BRIGHT_LILAC = '#D293F3',

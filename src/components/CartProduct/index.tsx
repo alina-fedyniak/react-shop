@@ -20,8 +20,7 @@ console.log(product)
             <StyledCartProduct>
                 <StyledImg src={product.image} />
                 <StyledTitle>{product.title}</StyledTitle>
-                <StyledPrice>{product.price}</StyledPrice>
-                <StyledRating>{product.rating.rate}</StyledRating>
+                <StyledPrice>{product.price + '$'}</StyledPrice>
             </StyledCartProduct>
         </StyledWrap>
     )

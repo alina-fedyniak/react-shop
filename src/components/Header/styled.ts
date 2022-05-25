@@ -7,6 +7,7 @@ export const HeaderWrap = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background: ${COLORS.LAVENDER};
 `;
 
 export const ShoppingBagStyled = styled.div`
