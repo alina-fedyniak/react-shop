@@ -5,8 +5,8 @@ import {
     StyledImg,
     StyledTitle,
     StyledPrice,
-    StyledRating,
 } from './styled';
+import Rating from '../common/Rate';
 
 type TProps = {
     product: any;
@@ -21,6 +21,7 @@ console.log(product)
                 <StyledImg src={product.image} />
                 <StyledTitle>{product.title}</StyledTitle>
                 <StyledPrice>{product.price + '$'}</StyledPrice>
+                <Rating />
             </StyledCartProduct>
         </StyledWrap>
     )

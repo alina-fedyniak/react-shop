@@ -4,7 +4,7 @@ import {
     StyledWrap,
 } from './styled';
 import Products from '../components/Products';
-import Accordion from '../components/Accordion';
+import Accordion from '../components/common/Accordion';
 
 const ProductsPage = () => {
     return (

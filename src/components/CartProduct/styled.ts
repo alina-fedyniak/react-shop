@@ -43,7 +43,3 @@ export const StyledPrice = styled.div`
   border-top: 1px solid ${COLORS.LAVENDER};
   width: 100%;
 `;
-
-export const StyledRating = styled.div`
-  
-`;
