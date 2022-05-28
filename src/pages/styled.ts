@@ -5,7 +5,6 @@ export const StyledProductsPage = styled.div`
 `;
 
 export const StyledWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
+  min-height: 465px;
+  margin: 25px;
 `;

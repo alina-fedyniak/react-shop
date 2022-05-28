@@ -6,11 +6,9 @@ import Slider from '../components/common/Slider';
 
 const Home = () => {
     return (
-        <>
-            <StyledWrap />
-            <Slider />
-        </>
-
+        <StyledWrap>
+            <Slider/>
+        </StyledWrap>
     )
 }
 

@@ -28,7 +28,7 @@ export const StyledTitle = styled.div`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 35px;
   margin-top: 25px;
   flex: 1 0 auto;
