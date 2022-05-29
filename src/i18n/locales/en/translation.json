@@ -2,5 +2,8 @@
   "search": {
     "search_text": "Search",
     "search_btn": "Search"
+  },
+  "cart_product": {
+    "add_to_cart": "Add to cart"
   }
 }

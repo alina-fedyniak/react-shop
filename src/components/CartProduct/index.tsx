@@ -5,15 +5,22 @@ import {
     StyledImg,
     StyledTitle,
     StyledPrice,
+    StyledBtn,
 } from './styled';
 import Rating from '../common/Rate';
+import BlueMainButton from '../buttons/BlueMainButton';
+import { useTranslation } from 'react-i18next';
 
 type TProps = {
     product: any;
 }
 
 const CartProduct = ({ product }: TProps): JSX.Element => {
-console.log(product)
+    const { t } = useTranslation();
+
+    const handleAddToCart = () => {
+      console.log('handleAddToCart')
+    };
 
     return (
         <StyledWrap>
@@ -21,6 +28,12 @@ console.log(product)
                 <StyledImg src={product.image} />
                 <StyledTitle>{product.title}</StyledTitle>
                 <StyledPrice>{product.price + '$'}</StyledPrice>
+                <StyledBtn>
+                    <BlueMainButton
+                        onClick={handleAddToCart}
+                        text={t('cart_product.add_to_cart')}
+                    />
+                </StyledBtn>
                 <Rating />
             </StyledCartProduct>
         </StyledWrap>

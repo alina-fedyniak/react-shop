@@ -9,6 +9,7 @@ export const StyledWrap = styled.div`
   background: ${COLORS.WHITE};
   margin: 10px;
   border-radius: 30px;
+  color: ${COLORS.DARK_BLUE};
 `;
 
 export const StyledCartProduct = styled.div`
@@ -34,12 +35,16 @@ export const StyledTitle = styled.div`
   flex: 1 0 auto;
 `;
 
+export const StyledBtn = styled.div`
+  
+`;
+
 export const StyledPrice = styled.div`
+  font-size: 19px;
   flex: 0 0 auto;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  color: ${COLORS.DARK_BLUE};
   border-top: 1px solid ${COLORS.LAVENDER};
   width: 100%;
 `;
