@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Collapse } from 'antd';
 import {
     CollapseWrap,
@@ -6,27 +6,37 @@ import {
 
 const { Panel } = Collapse;
 
-const text = `
-  text
-`;
+interface IAccordionItem {
+    id: number;
+    title: string;
+    dropdownText: string;
+}
 
-const Accordion = (): JSX.Element => {
-    const onChange = (key: string | string[]) => {
-        console.log(key);
+type TProps = {
+    items: IAccordionItem[];
+    headingText?: string;
+};
+
+const Accordion = ({ items }: TProps): JSX.Element => {
+    const [clicked, setClicked] = useState<number | null>(null);
+
+    const onChange = (id: any) => {
+        if (clicked === id) {
+            return setClicked(null);
+        }
+        setClicked(id);
     };
 
     return (
         <CollapseWrap>
-            <Collapse defaultActiveKey={['1']} onChange={onChange}>
-                <Panel header="This is panel 1" key="1">
-                    <p>{text}</p>
-                </Panel>
-                <Panel header="This is panel 2" key="2">
-                    <p>{text}</p>
-                </Panel>
-                <Panel header="This is panel 3" key="3">
-                    <p>{text}</p>
-                </Panel>
+            <Collapse onChange={onChange}>
+                {items.map((item: IAccordionItem) => {
+                    return (
+                        <Panel header={item.title} key={item.id}>
+                            <p>{item.dropdownText}</p>
+                        </Panel>
+                    )
+                })}
             </Collapse>
         </CollapseWrap>
     )
