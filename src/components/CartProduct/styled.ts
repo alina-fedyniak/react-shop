@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { COLORS } from '../../constants/colors';
 
 export const StyledWrap = styled.div`
+  font-family: 'Montserrat';
   box-shadow: 0 0 15px 0 rgba(230 230 250);
   width: 250px;
   padding: 20px;
@@ -10,6 +11,12 @@ export const StyledWrap = styled.div`
   margin: 10px;
   border-radius: 30px;
   color: ${COLORS.DARK_BLUE};
+`;
+
+export const StyledHard = styled.div`
+  position: relative;
+  left: 90px;
+  font-size: 20px;
 `;
 
 export const StyledCartProduct = styled.div`
@@ -26,7 +33,7 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledTitle = styled.div`
-  font-family: 'Roboto';
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

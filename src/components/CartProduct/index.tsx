@@ -6,10 +6,12 @@ import {
     StyledTitle,
     StyledPrice,
     StyledBtn,
+    StyledHard,
 } from './styled';
 import Rating from '../common/Rate';
 import BlueMainButton from '../buttons/BlueMainButton';
 import { useTranslation } from 'react-i18next';
+import { HeartOutlined } from '@ant-design/icons';
 
 type TProps = {
     product: any;
@@ -25,6 +27,9 @@ const CartProduct = ({ product }: TProps): JSX.Element => {
     return (
         <StyledWrap>
             <StyledCartProduct>
+                <StyledHard>
+                    <HeartOutlined />
+                </StyledHard>
                 <StyledImg src={product.image} />
                 <StyledTitle>{product.title}</StyledTitle>
                 <StyledPrice>{product.price + '$'}</StyledPrice>
@@ -34,7 +39,7 @@ const CartProduct = ({ product }: TProps): JSX.Element => {
                         text={t('cart_product.add_to_cart')}
                     />
                 </StyledBtn>
-                <Rating />
+                <Rating rating={product.rating}/>
             </StyledCartProduct>
         </StyledWrap>
     )

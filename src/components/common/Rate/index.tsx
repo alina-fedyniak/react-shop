@@ -4,16 +4,24 @@ import {
     RateWrap,
 } from './styled'
 
-const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
+type TProps = {
+    rating: {
+        rate: number,
+        count: any
+    };
+}
 
-const Rating = (): JSX.Element => {
-    const [value, setValue] = useState(3);
+const Rating = ({ rating }: TProps): JSX.Element => {
+    const [value, setValue] = useState(rating.rate);
 
     return (
         <RateWrap>
-            <Rate tooltips={desc} onChange={setValue} value={value} />
-            {value ? <span className="ant-rate-text">{desc[value - 1]}
-            </span> : ''}
+            <span>
+                <Rate tooltips={rating.count} onChange={setValue} value={value} />
+                {value ? <span className='ant-rate-text'>
+                    {rating.count}
+                </span> : ''}
+            </span>
         </RateWrap>
     );
 };
