@@ -1,13 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {
-    headerRoutes,
+    headerRoutes, productRoutes,
 } from '../constants/navigation';
 
 type ValueOrArray<T> = T | ValueOrArray<T>[];
 
 const mapRoute = (item: any): ValueOrArray<JSX.Element> => {
-    console.log(item)
     return (
         <Route
             path={item.url}
@@ -19,6 +18,7 @@ const mapRoute = (item: any): ValueOrArray<JSX.Element> => {
 
 export const allRoutes = [
     ...headerRoutes,
+    ...productRoutes,
 ].map(mapRoute);
 
 const AppRouter = (): JSX.Element => (

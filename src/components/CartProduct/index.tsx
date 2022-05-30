@@ -12,6 +12,8 @@ import Rating from '../common/Rate';
 import BlueMainButton from '../buttons/BlueMainButton';
 import { useTranslation } from 'react-i18next';
 import { HeartOutlined } from '@ant-design/icons';
+import { NavLink } from 'react-router-dom';
+import { RoutesPaths } from '../../constants/navigation';
 
 type TProps = {
     product: any;
@@ -30,8 +32,10 @@ const CartProduct = ({ product }: TProps): JSX.Element => {
                 <StyledHard>
                     <HeartOutlined />
                 </StyledHard>
-                <StyledImg src={product.image} />
-                <StyledTitle>{product.title}</StyledTitle>
+                <NavLink to={RoutesPaths.PRODUCT.replace(':id', '' + product.id)}>
+                    <StyledImg src={product.image} />
+                    <StyledTitle>{product.title}</StyledTitle>
+                </NavLink>
                 <StyledPrice>{product.price + '$'}</StyledPrice>
                 <StyledBtn>
                     <BlueMainButton

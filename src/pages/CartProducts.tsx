@@ -24,7 +24,7 @@ const items = [
     },
 ];
 
-const ProductsPage = () => {
+const CartProducts = () => {
     return (
         <StyledProductsPage>
             <Accordion items={items} />
@@ -35,4 +35,4 @@ const ProductsPage = () => {
     )
 }
 
-export default ProductsPage
+export default CartProducts

@@ -14,7 +14,8 @@ export interface IProducts {
 }
 
 export interface IOneProduct {
-    info: any
+    product: any,
+    loader: boolean,
 }
 
 export interface ProductsState {

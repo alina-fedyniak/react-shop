@@ -4,6 +4,6 @@ export const StyledWrap = styled.div`
   
 `;
 
-export const StyledImg = styled.div`
-  
+export const StyledImg = styled.img`
+  width: 20%;
 `;

@@ -5,10 +5,10 @@ import { COLORS } from '../../constants/colors'
 type TStyledButtonProps = {
     outline?: boolean
     small?: boolean
-    backgroundColor: string
-    backgroundColorOnHover: string
-    backgroundColorOnClick: string
-    backgroundColorOnDisabled: string
+    backgroundColor?: string
+    backgroundColorOnHover?: string
+    backgroundColorOnClick?: string
+    backgroundColorOnDisabled?: string
     width?: string
     height?: string
 }

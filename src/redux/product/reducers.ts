@@ -8,26 +8,24 @@ import {
 } from './types';
 
 const initialState: ProductsState = {
+    loader: false,
     products: [],
     oneProductInfo: {
-        info: [],
+        product: [],
+        loader: false,
     },
-    loader: false,
+
 }
 
 const productsReducers = createReducer({}, {
     GET_ONE_PRODUCT: (state: ProductsState) => ({
         ...state,
-        oneProductInfo: {
-            ...state.oneProductInfo,
-        },
         loader: true
     }),
     GET_ONE_PRODUCT_SUCCESS: (state: ProductsState, action: GetProductDetailsSuccess) => ({
         ...state,
         oneProductInfo: {
-            ...state.oneProductInfo,
-            info: action.payload
+            product: action.payload
         },
         loader: false,
     }),
