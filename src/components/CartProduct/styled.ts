@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COLORS } from '../../constants/colors';
+import BlueMainButton from '../buttons/BlueMainButton';
 
 export const StyledWrap = styled.div`
   font-family: 'Montserrat';
@@ -39,10 +40,14 @@ export const StyledTitle = styled.div`
   font-size: 20px;
   line-height: 35px;
   margin-top: 25px;
+  color: ${COLORS.DARK_BLUE};
+`;
+
+export const StyledContent = styled.div`
   flex: 1 0 auto;
 `;
 
-export const StyledBtn = styled.div`
+export const StyledBtn = styled(BlueMainButton)`
   
 `;
 

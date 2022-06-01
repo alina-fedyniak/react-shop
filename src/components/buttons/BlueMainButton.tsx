@@ -23,9 +23,17 @@ type TProps = {
 const BlueMainButton = ({
     icon,
     text,
+    backgroundColor,
+    backgroundColorOnHover,
+    backgroundColorOnClick,
+    backgroundColorOnDisabled,
     ...rest
 }: TProps): JSX.Element => (
     <StyledButton
+        backgroundColor={backgroundColor || COLORS.DARK_BLUE}
+        backgroundColorOnHover={backgroundColorOnHover || COLORS.MAIN_BLUE}
+        backgroundColorOnClick={backgroundColorOnClick || COLORS.PHTHALO_BLUE}
+        backgroundColorOnDisabled={backgroundColorOnDisabled || COLORS.BLUE_BELL}
         {...rest}
     >
         {icon}

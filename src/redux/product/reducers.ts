@@ -1,6 +1,5 @@
 import createReducer from '../../utils/createReducer';
 import {
-    IProducts,
     ProductActions,
     ProductsState,
     GetProductDetailsSuccess,

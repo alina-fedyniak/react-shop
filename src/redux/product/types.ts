@@ -1,6 +1,6 @@
 import { ProductsTypes } from './actions';
 
-export interface IProducts {
+export interface IProduct {
     id: number,
     title: string,
     price: number,

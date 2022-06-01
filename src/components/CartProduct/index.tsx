@@ -7,13 +7,13 @@ import {
     StyledPrice,
     StyledBtn,
     StyledHard,
+    StyledContent,
 } from './styled';
 import Rating from '../common/Rate';
-import BlueMainButton from '../buttons/BlueMainButton';
-import { useTranslation } from 'react-i18next';
-import { HeartOutlined } from '@ant-design/icons';
-import { NavLink } from 'react-router-dom';
-import { RoutesPaths } from '../../constants/navigation';
+import {useTranslation} from 'react-i18next';
+import {HeartOutlined} from '@ant-design/icons';
+import {NavLink} from 'react-router-dom';
+import {RoutesPaths} from '../../constants/navigation';
 
 type TProps = {
     product: any;
@@ -23,7 +23,7 @@ const CartProduct = ({ product }: TProps): JSX.Element => {
     const { t } = useTranslation();
 
     const handleAddToCart = () => {
-      console.log('handleAddToCart')
+        console.log('handleAddToCart')
     };
 
     return (
@@ -32,18 +32,18 @@ const CartProduct = ({ product }: TProps): JSX.Element => {
                 <StyledHard>
                     <HeartOutlined />
                 </StyledHard>
-                <NavLink to={RoutesPaths.PRODUCT.replace(':id', '' + product.id)}>
-                    <StyledImg src={product.image} />
-                    <StyledTitle>{product.title}</StyledTitle>
-                </NavLink>
+                <StyledContent>
+                    <NavLink to={RoutesPaths.PRODUCT.replace(':id', '' + product.id)}>
+                        <StyledImg src={product.image} />
+                        <StyledTitle>{product.title}</StyledTitle>
+                    </NavLink>
+                </StyledContent>
                 <StyledPrice>{product.price + '$'}</StyledPrice>
-                <StyledBtn>
-                    <BlueMainButton
-                        onClick={handleAddToCart}
-                        text={t('cart_product.add_to_cart')}
-                    />
-                </StyledBtn>
-                <Rating rating={product.rating}/>
+                <StyledBtn
+                    onClick={handleAddToCart}
+                    text={t('cart_product.add_to_cart')}
+                />
+                <Rating rating={product.rating} />
             </StyledCartProduct>
         </StyledWrap>
     )
