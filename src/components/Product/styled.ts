@@ -25,7 +25,7 @@ export const StyledTitle = styled.h1`
 `;
 
 export const StyledImg = styled.img`
-  width: 40%;
+  width: 50%;
 `;
 
 export const StyledBlockImg = styled.div`
@@ -34,9 +34,16 @@ export const StyledBlockImg = styled.div`
 
 export const StyledBlockPrice = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 20%;
+  border: 1px solid lavender;
+  border-radius: 8px;
+  padding: 20px 99px;
+`;
+
+export const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 40%;
 `;
 
 export const StyledPrice = styled.div`
@@ -44,8 +51,6 @@ export const StyledPrice = styled.div`
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
-  margin-bottom: 20px;
-  border-bottom: 1px solid ${COLORS.LAVENDER};
   text-align: center;
   width: 100%;
 `;
@@ -60,9 +65,6 @@ export const StyledDescriptionTitle = styled.h2`
 `;
 
 export const StyledDescription = styled.p`
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 14px;
+  width: 50%;
 `;

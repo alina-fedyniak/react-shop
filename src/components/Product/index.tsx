@@ -10,12 +10,14 @@ import {
     StyledDescriptionTitle,
     StyledBlockImg,
     StyledBlockPrice,
+    StyledWrapper,
 } from './styled'
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { OneProductSelector } from '../../redux/product/selector';
 import { useParams } from 'react-router';
 import { getOneProduct } from '../../redux/product/actions';
 import { useTranslation } from 'react-i18next';
+import Delivery from '../Delivery';
 
 const Product = (): JSX.Element => {
     const { t } = useTranslation();
@@ -39,13 +41,16 @@ const Product = (): JSX.Element => {
                 <StyledBlockImg>
                     <StyledImg src={product.image}/>
                 </StyledBlockImg>
-                <StyledBlockPrice>
-                    <StyledPrice>{product.price + '$'}</StyledPrice>
-                    <StyledBtn
-                        onClick={handleAddToCart}
-                        text={t('cart_product.add_to_cart')}
-                    />
-                </StyledBlockPrice>
+                <StyledWrapper>
+                    <StyledBlockPrice>
+                        <StyledPrice>{product.price + '$'}</StyledPrice>
+                        <StyledBtn
+                            onClick={handleAddToCart}
+                            text={t('cart_product.add_to_cart')}
+                        />
+                    </StyledBlockPrice>
+                    <Delivery />
+                </StyledWrapper>
             </StyledCartProduct>
             <StyledDescriptionTitle>
                 {t('product_description.product_description')}
