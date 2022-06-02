@@ -5,5 +5,8 @@
   },
   "cart_product": {
     "add_to_cart": "Add to cart"
+  },
+  "product_description": {
+    "product_description": "Product description:"
   }
 }

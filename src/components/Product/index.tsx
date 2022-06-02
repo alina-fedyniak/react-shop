@@ -6,7 +6,10 @@ import {
     StyledCartProduct,
     StyledPrice,
     StyledTitle,
-    StyledDescription
+    StyledDescription,
+    StyledDescriptionTitle,
+    StyledBlockImg,
+    StyledBlockPrice,
 } from './styled'
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { OneProductSelector } from '../../redux/product/selector';
@@ -31,16 +34,23 @@ const Product = (): JSX.Element => {
 
     return (
         <StyledWrap>
+            <StyledTitle>{product.title}</StyledTitle>
             <StyledCartProduct>
-                <StyledTitle>{product.title}</StyledTitle>
-                <StyledImg src={product.image}/>
-                <StyledPrice>{product.price + '$'}</StyledPrice>
-                <StyledBtn
-                    onClick={handleAddToCart}
-                    text={t('cart_product.add_to_cart')}
-                />
-                <StyledDescription>{product.description}</StyledDescription>
+                <StyledBlockImg>
+                    <StyledImg src={product.image}/>
+                </StyledBlockImg>
+                <StyledBlockPrice>
+                    <StyledPrice>{product.price + '$'}</StyledPrice>
+                    <StyledBtn
+                        onClick={handleAddToCart}
+                        text={t('cart_product.add_to_cart')}
+                    />
+                </StyledBlockPrice>
             </StyledCartProduct>
+            <StyledDescriptionTitle>
+                {t('product_description.product_description')}
+            </StyledDescriptionTitle>
+            <StyledDescription>{product.description}</StyledDescription>
         </StyledWrap>
     )
 }
