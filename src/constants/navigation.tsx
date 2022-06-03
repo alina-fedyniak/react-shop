@@ -3,12 +3,14 @@ import Home from '../pages/Home';
 import Contacts from '../pages/Contacts';
 import CartProducts from '../pages/CartProducts';
 import CartProduct from '../pages/CartProduct';
+import Cart from '../pages/Cart';
 
 export enum RoutesNames {
     HOME = 'HOME',
     CONTACTS = 'CONTACTS',
     PRODUCTS = 'PRODUCTS',
     PRODUCT = 'PRODUCT',
+    CART = 'CART',
 }
 
 export enum RoutesPaths {
@@ -16,6 +18,7 @@ export enum RoutesPaths {
     CONTACTS = '/contacts',
     PRODUCTS = '/products',
     PRODUCT = '/product/:id',
+    CART = '/cart',
 }
 
 export interface RouteConfig {
@@ -88,6 +91,12 @@ export const ROUTES: { [key in RoutesNames]: RouteConfig } = {
         RoutesPaths[RoutesNames.PRODUCT],
         <CartProduct />,
     ),
+    [RoutesNames.CART]: buildRoute(
+        RoutesNames.CART,
+        'Cart',
+        RoutesPaths[RoutesNames.CART],
+        <Cart />,
+    ),
 }
 
 export const headerRoutes: Array<RouteConfig> = [
@@ -101,11 +110,16 @@ export const productRoutes: Array<RouteConfig> = [
     ROUTES[RoutesNames.PRODUCT],
 ];
 
+export const cartRoutes: Array<RouteConfig> = [
+    ROUTES[RoutesNames.CART],
+];
+
 export const publicRoutesArray: string[] = [
     RoutesNames.HOME,
     RoutesNames.CONTACTS,
     RoutesNames.PRODUCTS,
     RoutesNames.PRODUCT,
+    RoutesNames.CART,
 ]
 
 export const publicPaths = [
@@ -113,4 +127,5 @@ export const publicPaths = [
     '/contacts',
     '/products',
     '/product/:id',
+    '/cart',
 ]

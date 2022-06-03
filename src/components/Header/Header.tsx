@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Logo';
 import HeaderMenu from './HeaderMenu';
-import { ShoppingBagIcon, SearchIcon }  from '../../assets/svg';
+import { SearchIcon, CartShopTrollyIcon } from '../../assets/svg';
 import {
     HeaderWrap,
     ShoppingBagStyled,
@@ -11,6 +11,8 @@ import {
 } from './styled';
 import { FormInput } from '../common/Input';
 import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
+import { RoutesPaths } from '../../constants/navigation';
 
 const Header = () => {
     const { t } = useTranslation();
@@ -36,9 +38,11 @@ const Header = () => {
                 />
             </StyledForm>
             <HeaderMenu />
-            <ShoppingBagStyled>
-                <ShoppingBagIcon />
-            </ShoppingBagStyled>
+            <NavLink to={RoutesPaths.CART}>
+                <ShoppingBagStyled>
+                    <CartShopTrollyIcon />
+                </ShoppingBagStyled>
+            </NavLink>
         </HeaderWrap>
     )
 };

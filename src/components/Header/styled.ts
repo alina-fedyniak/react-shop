@@ -11,6 +11,7 @@ export const HeaderWrap = styled.div`
 `;
 
 export const ShoppingBagStyled = styled.div`
+  width: 30px;
   margin: 0 25px;
 `;
 

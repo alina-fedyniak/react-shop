@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import {
+    cartRoutes,
     headerRoutes, productRoutes,
 } from '../constants/navigation';
 
@@ -19,6 +20,7 @@ const mapRoute = (item: any): ValueOrArray<JSX.Element> => {
 export const allRoutes = [
     ...headerRoutes,
     ...productRoutes,
+    ...cartRoutes,
 ].map(mapRoute);
 
 const AppRouter = (): JSX.Element => (

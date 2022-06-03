@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import BlueMainButton from '../buttons/BlueMainButton';
-import {COLORS} from '../../constants/colors';
+import { COLORS } from '../../constants/colors';
 
 export const StyledWrap = styled.div`
   color: ${COLORS.DARK_BLUE};
-  padding: 20px;
+  padding: 20px 40px;
 `;
 
 export const StyledCartProduct = styled.div`
@@ -15,7 +15,6 @@ export const StyledCartProduct = styled.div`
 
 
 export const StyledTitle = styled.h1`
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   line-height: 35px;
