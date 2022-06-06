@@ -9,9 +9,13 @@ import {
     StyledPrice,
 } from './styled';
 import { useTranslation } from 'react-i18next';
+import { useAppSelector } from '../../hooks';
+import { CreateCartSelector } from '../../redux/cart/selector';
 
 const CartBag = (): JSX.Element => {
     const { t } = useTranslation();
+    const cart = useAppSelector(CreateCartSelector);
+    console.log(cart)
 
     const handleBuyProduct = () => {
         console.log('handleBuyProduct')

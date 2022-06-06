@@ -10,10 +10,12 @@ import {
     StyledContent,
 } from './styled';
 import Rating from '../common/Rate';
-import {useTranslation} from 'react-i18next';
-import {HeartOutlined} from '@ant-design/icons';
-import {NavLink} from 'react-router-dom';
-import {RoutesPaths} from '../../constants/navigation';
+import { useTranslation } from 'react-i18next';
+import { HeartOutlined } from '@ant-design/icons';
+import { NavLink } from 'react-router-dom';
+import { RoutesPaths } from '../../constants/navigation';
+import { createCart } from '../../redux/cart/actions';
+import { useAppDispatch } from '../../hooks';
 
 type TProps = {
     product: any;
@@ -21,9 +23,19 @@ type TProps = {
 
 const CartProduct = ({ product }: TProps): JSX.Element => {
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
 
     const handleAddToCart = () => {
         console.log('handleAddToCart')
+        dispatch(createCart({
+            userId: 2,
+            products: [
+                {
+                    id: 1,
+                    quantity: 1
+                }
+            ]
+        }));
     };
 
     return (

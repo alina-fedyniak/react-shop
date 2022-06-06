@@ -18,13 +18,13 @@ import { useParams } from 'react-router';
 import { getOneProduct } from '../../redux/product/actions';
 import { useTranslation } from 'react-i18next';
 import Delivery from '../Delivery';
+import { createCart } from '../../redux/cart/actions';
 
 const Product = (): JSX.Element => {
     const { t } = useTranslation();
     const { id }: any = useParams();
     const dispatch = useAppDispatch();
     const product = useAppSelector(OneProductSelector);
-    console.log(product)
 
     useEffect(() => {
         dispatch(getOneProduct(id));
@@ -32,6 +32,7 @@ const Product = (): JSX.Element => {
 
     const handleAddToCart = () => {
         console.log('handleAddToCart')
+        dispatch(createCart(id));
     };
 
     return (
