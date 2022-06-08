@@ -41,15 +41,6 @@ export const StyledForm = styled.div`
 `;
 
 export const StyledButton = styled(Button)`
-  width: auto;
-  background-color: ${COLORS.DARK_BLUE};
-  color: ${COLORS.WHITE};
-  font-size: 16px;
-  letter-spacing: 0.05em;
-  display: inline-flex;
-  font-weight: 600;
   margin: 0 3px;
-  &:hover {
-    background-color: ${COLORS.DARK_BLUE};
-  }
+  width: 20%;
 `;

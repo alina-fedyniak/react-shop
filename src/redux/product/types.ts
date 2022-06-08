@@ -3,25 +3,31 @@ import { ProductsTypes } from './actions';
 export interface IProduct {
     id: number,
     title: string,
-    price: number,
     description: string,
+    price: number,
+    discountPercentage:number,
+    rating: number,
+    stock: number,
+    brand: string,
     category: string,
-    image: string,
-    rating: {
-        rate: number,
-        count: number,
-    }
+    thumbnail: string,
+    images: [],
 }
 
 export interface IOneProduct {
     product: any,
-    loader: boolean,
+    loader: any,
 }
 
 export interface ProductsState {
-    products: any,
+    productsData: {
+        products: IProduct[],
+        limit: number,
+        skip: number,
+        total: number
+    },
     oneProductInfo: IOneProduct,
-    loader: boolean,
+    loader: any,
 }
 
 export interface GetProductDetails {

@@ -1,30 +1,32 @@
 import React, { useEffect } from 'react';
 import {
     StyledWrap,
-    StyledImg,
     StyledBtn,
     StyledCartProduct,
     StyledPrice,
     StyledTitle,
     StyledDescription,
     StyledDescriptionTitle,
-    StyledBlockImg,
     StyledBlockPrice,
     StyledWrapper,
+    StyledSpin,
 } from './styled'
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { OneProductSelector } from '../../redux/product/selector';
+import {IsLoaderSelector, OneProductSelector} from '../../redux/product/selector';
 import { useParams } from 'react-router';
 import { getOneProduct } from '../../redux/product/actions';
 import { useTranslation } from 'react-i18next';
 import Delivery from '../Delivery';
 import { createCart } from '../../redux/cart/actions';
+import Spin from 'antd/lib/spin';
+import Images from '../common/Image';
 
 const Product = (): JSX.Element => {
     const { t } = useTranslation();
     const { id }: any = useParams();
     const dispatch = useAppDispatch();
     const product = useAppSelector(OneProductSelector);
+    const isLoader = useAppSelector(IsLoaderSelector);
 
     useEffect(() => {
         dispatch(getOneProduct(id));
@@ -36,12 +38,18 @@ const Product = (): JSX.Element => {
     };
 
     return (
+        isLoader ?
+            <StyledSpin>
+                <Spin />
+            </StyledSpin>
+            :
         <StyledWrap>
             <StyledTitle>{product.title}</StyledTitle>
             <StyledCartProduct>
-                <StyledBlockImg>
-                    <StyledImg src={product.image}/>
-                </StyledBlockImg>
+                {product.images ?
+                    <Images images={product.images}/>
+                    : ''
+                }
                 <StyledWrapper>
                     <StyledBlockPrice>
                         <StyledPrice>{product.price + '$'}</StyledPrice>

@@ -9,7 +9,7 @@ import CartProduct from '../CartProduct';
 
 const Products = (): JSX.Element => {
     const dispatch = useAppDispatch();
-    const products = useAppSelector(ProductsSelector);
+    const productsState = useAppSelector(ProductsSelector);
 
     useEffect(() => {
         dispatch(getAllProducts());
@@ -17,7 +17,7 @@ const Products = (): JSX.Element => {
 
     return (
         <StyledWrap>
-            {products.products.map((product: any, index: number) => {
+            {productsState.productsData.products.map((product: any, index: number) => {
                 return <CartProduct key={index} product={product}/>
             })}
         </StyledWrap>

@@ -3,12 +3,17 @@ import {
     ProductActions,
     ProductsState,
     GetProductDetailsSuccess,
-    GetAllProductsSuccess,
+    GetAllProductsSuccess, IProduct,
 } from './types';
 
 const initialState: ProductsState = {
     loader: false,
-    products: [],
+    productsData: {
+        products: [],
+        limit: 30,
+        skip: 0,
+        total: 0
+    },
     oneProductInfo: {
         product: [],
         loader: false,
@@ -41,7 +46,7 @@ const productsReducers = createReducer({}, {
     }),
     GET_PRODUCTS_SUCCESS: (state: ProductsState, action: GetAllProductsSuccess) => ({
         ...state,
-        products: action.payload,
+        productsData: action.payload,
         loader: false,
     }),
     GET_PRODUCTS_FAIL: (state: ProductsState) => ({

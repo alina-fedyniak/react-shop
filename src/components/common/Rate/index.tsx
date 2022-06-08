@@ -5,21 +5,18 @@ import {
 } from './styled'
 
 type TProps = {
-    rating: {
-        rate: number,
-        count: any
-    };
+    rating: any;
 }
 
 const Rating = ({ rating }: TProps): JSX.Element => {
-    const [value, setValue] = useState(rating.rate);
+    const [value, setValue] = useState(rating);
 
     return (
         <RateWrap>
             <span>
-                <Rate tooltips={rating.count} onChange={setValue} value={value} />
+                <Rate tooltips={rating} onChange={setValue} value={value} />
                 {value ? <span className='ant-rate-text'>
-                    {rating.count}
+                    {rating}
                 </span> : ''}
             </span>
         </RateWrap>

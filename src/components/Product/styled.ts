@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import BlueMainButton from '../buttons/BlueMainButton';
 import { COLORS } from '../../constants/colors';
+import { Button } from '../common/Button';
 
 export const StyledWrap = styled.div`
   color: ${COLORS.DARK_BLUE};
@@ -9,10 +9,9 @@ export const StyledWrap = styled.div`
 
 export const StyledCartProduct = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 `;
-
 
 export const StyledTitle = styled.h1`
   font-style: normal;
@@ -23,13 +22,14 @@ export const StyledTitle = styled.h1`
   margin-bottom: 30px;
 `;
 
-export const StyledImg = styled.img`
-  width: 50%;
-`;
-
-export const StyledBlockImg = styled.div`
-  
-`;
+export const StyledSpin = styled.div`
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 export const StyledBlockPrice = styled.div`
   display: flex;
@@ -54,7 +54,7 @@ export const StyledPrice = styled.div`
   width: 100%;
 `;
 
-export const StyledBtn = styled(BlueMainButton)`
+export const StyledBtn = styled(Button)`
   
 `;
 
@@ -63,7 +63,7 @@ export const StyledDescriptionTitle = styled.h2`
   color: ${COLORS.DARK_BLUE};
 `;
 
-export const StyledDescription = styled.p`
+export const StyledDescription = styled.div`
   font-size: 14px;
   width: 50%;
 `;

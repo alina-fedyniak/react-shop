@@ -20,15 +20,15 @@ export const StyledButton = styled(Button)`
   height: ${props => props.height || 'auto'};
   color: ${props => props.color || COLORS.WHITE};
   border: ${(props:TProps) => props.borderColor || COLORS.WHITE};
-  background-color: ${(props:TProps) => props.backgroundColor || COLORS.LIGHT_GREEN};
+  background-color: ${(props:TProps) => props.backgroundColor || COLORS.WARM_BLUE};
   &:hover{
-    background-color: ${(props:TProps) => props.backgroundColor || COLORS.DARK_GREEN};
+    background-color: ${(props:TProps) => props.backgroundColor || COLORS.PEROLOUS};
     color: ${props => props.color || COLORS.WHITE};
     border: ${(props:TProps) => props.borderColor || COLORS.WHITE};
     opacity: 0.8;
   }
   &:focus{
-    background-color: ${(props:TProps) => props.backgroundColor || COLORS.DARK_GREEN};
+    background-color: ${(props:TProps) => props.backgroundColor || COLORS.WARM_BLUE};
     color: ${props => props.color || COLORS.WHITE};
   }
 `;

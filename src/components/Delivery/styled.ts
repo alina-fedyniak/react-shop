@@ -21,7 +21,7 @@ export const StyledTitle = styled.h2`
   margin: 0;
 `;
 
-export const DeliveryBlock = styled.p`
+export const DeliveryBlock = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,39 +33,39 @@ export const DeliveryBlock = styled.p`
   }
 `;
 
-export const StyledPickup = styled.p`
+export const StyledPickup = styled.div`
   width: 160px;
 `;
 
-export const StyledPickupText = styled.p`
+export const StyledPickupText = styled.div`
   width: 160px;
 `;
 
-export const StyledPickupPrice = styled.p`
+export const StyledPickupPrice = styled.div`
   width: 50px;
 
 `;
 
-export const StyledPost = styled.p`
+export const StyledPost = styled.div`
   width: 160px;
 `;
 
-export const StyledPostText = styled.p`
+export const StyledPostText = styled.div`
   width: 160px;
 `;
 
-export const StyledPostPrice = styled.p`
+export const StyledPostPrice = styled.div`
   width: 50px;
 `;
 
-export const StyledСourier = styled.p`
+export const StyledСourier = styled.div`
   width: 160px;
 `;
 
-export const StyledСourierText = styled.p`
+export const StyledСourierText = styled.div`
   width: 160px;
 `;
 
-export const StyledСourierPrice = styled.p`
+export const StyledСourierPrice = styled.div`
   width: 50px;
 `;

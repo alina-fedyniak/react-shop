@@ -46,7 +46,7 @@ const CartProduct = ({ product }: TProps): JSX.Element => {
                 </StyledHard>
                 <StyledContent>
                     <NavLink to={RoutesPaths.PRODUCT.replace(':id', '' + product.id)}>
-                        <StyledImg src={product.image} />
+                        <StyledImg src={product.thumbnail} />
                         <StyledTitle>{product.title}</StyledTitle>
                     </NavLink>
                 </StyledContent>

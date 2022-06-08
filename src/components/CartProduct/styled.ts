@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { COLORS } from '../../constants/colors';
-import BlueMainButton from '../buttons/BlueMainButton';
+import { Button } from '../common/Button';
 
 export const StyledWrap = styled.div`
   font-family: 'Montserrat';
@@ -28,7 +28,7 @@ export const StyledCartProduct = styled.div`
 `;
 
 export const StyledImg = styled.img`
-  width: 75%;
+  width: 100%;
   flex: 0 0 auto;
   height: 150px;
 `;
@@ -47,7 +47,7 @@ export const StyledContent = styled.div`
   flex: 1 0 auto;
 `;
 
-export const StyledBtn = styled(BlueMainButton)`
+export const StyledBtn = styled(Button)`
   
 `;
 
